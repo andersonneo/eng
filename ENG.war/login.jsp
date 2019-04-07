@@ -54,9 +54,9 @@
 							<br />
 							<div>
 								<h2>
-									<i class="fa fa-calculator"></i> 지출결의 자동화 프로그램
+									<i class="fa fa-calculator"></i> Japan -Php EngSchool
 								</h2>
-								<p>©2017 All Rights Reserved. DHITech</p>
+								<p>©2019 All Rights Reserved. EngSchool</p>
 							</div>
 						</div>
 					</form>

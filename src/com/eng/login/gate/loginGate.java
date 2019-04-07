@@ -1,4 +1,4 @@
-package com.dhitech.spend.login.gate;
+package com.eng.login.gate;
 
 import java.sql.Connection;
 
@@ -7,7 +7,7 @@ import com.dhitech.framework.exception.AppException;
 import com.dhitech.framework.exception.ExceptionManager;
 import com.dhitech.framework.log.Log;
 import com.dhitech.framework.tray.Tray;
-import com.dhitech.spend.login.dao.loginDao;
+import com.eng.login.dao.loginDao;
 
 public final class loginGate extends BaseBean {
 
@@ -33,27 +33,6 @@ public final class loginGate extends BaseBean {
 			Tray tray = dao.find(conn, reqTray);
 			conn.close();
 			return tray;
-		} catch (Exception ex) {
-			Log.error("ERROR", this, ex);
-			throw ExceptionManager.handleException(this.getClass().getName(), ex);
-		}
-	}
-	
-	public Tray findEx(Connection conn, Tray reqTray) throws AppException {
-		try {
-			conn = this.getConnection("dhli");
-			Tray tray = dao.findEx(conn, reqTray);
-			conn.close();
-			return tray;
-		} catch (Exception ex) {
-			Log.error("ERROR", this, ex);
-			throw ExceptionManager.handleException(this.getClass().getName(), ex);
-		}
-	}
-	
-	public boolean insert(Connection conn, Tray reqTray) throws AppException {
-		try {
-			return dao.insert(conn, reqTray);
 		} catch (Exception ex) {
 			Log.error("ERROR", this, ex);
 			throw ExceptionManager.handleException(this.getClass().getName(), ex);

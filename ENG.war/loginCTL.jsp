@@ -3,7 +3,7 @@
 <%@page import="com.dhitech.framework.tray.Tray"%>
 <%@page import="com.dhitech.framework.tray.RequestTrayFactory"%>
 <%@page import="com.dhitech.framework.tray.DhitechRequestTrayFactory"%>
-<%@page import="com.dhitech.spend.login.cmd.loginCmd"%>
+<%@page import="com.eng.login.cmd.loginCmd"%>
 <%@page import="java.util.Calendar"%>
 <%
 	// 이전페이지에서 POST/GET방식으로 전달한 모든 파라미터를 TRAY에 담는다. --> 기본사용
@@ -36,9 +36,8 @@
 		reqTray.setString("department", rsTray.getString("department"));
 		reqTray.setString("user_name", rsTray.getString("user_name"));
 		
-		new loginCmd().dataCheckCmd(reqTray, request, response);
 		session.setAttribute("user_info", rsTray);
-		response.sendRedirect("/infoSearch/");
+		response.sendRedirect("/adminBoard/");
 	}else{
 		//사용자 정보 없음
 %>
