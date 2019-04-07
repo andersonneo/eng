@@ -1,0 +1,83 @@
+@media print {
+	body{visibility: hidden;}
+	
+	/* /excel/index.jsp - 내역 프린트 페이지 */
+	.bold-right-border{border-right: 1px solid;}
+	.txt-center{text-align:center;}
+	.txt-right{text-align:right;padding-right:5px}
+	.bg-cell {background-color:#ebf1de;-webkit-print-color-adjust:exact;}
+	.col-2p-sm{width:2%;height:20px;}
+	.col-7p-sm{width:7%;height:20px;}
+	.col-10p-sm{width:10%;height:20px;}
+	.col-10p-md{width:10%;height:45px;}
+	.col-11p-sm{width:11.1%;height:24px;}
+	.col-14p-sm{width:14.2%;height:24px;}
+	.col-22p-sm{width:22.2%;height:24px;}
+	.col-25p-sm{width:25%;height:20px;}
+	.col-35p-sm{width:35%;height:20px;}
+	.col--sm{height:24px;}
+	.col--md{height:38px;}
+	.table-remove-tb-border {border-top: 1px !important;border-bottom: 1px !important;}
+	.table-remove-tl-border {border-top: 1px !important;border-left: 1px !important;}
+	.table-remove-top-border {border-top: 1px !important;}
+	.table-add-bottom-border {border-bottom: 1px solid;}
+	.table-add-right-border {border-right: 1px solid;}
+	
+	.notice-print p{padding:10px;background-color:#00f;color:#fff;font-size:12px}
+	.notice-print p a{color:#fff;font-weight:bold}
+	
+	#doc_spend-excel, #doc_traffic-excel {width:920px;visibility:visible;font-size:12px;height:100%;overflow:hidden}
+	#doc_spend-excel > div, #doc_traffic-excel > div {margin-bottom:25px;}
+	#doc_spend-excel > div:last-child, #doc_traffic-excel > div:last-child {margin-bottom:0 !important;}
+	#doc_spend-excel .doc-tit, #doc_traffic-excel .doc-tit {text-align:center;}
+	#doc_spend-excel table, #doc_traffic-excel table{border-spacing:0;width:100%}
+	.doc-unit_price {border:1px solid;}
+	
+	#doc_spend-excel table th{
+		border-left: 1px solid;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+	}
+	#doc_spend-excel table th:last-child, #doc_spend-excel table td:last-child{
+		border-right: 1px solid;
+	}
+	#doc_spend-excel table td{
+		border-left: 1px solid;
+		border-bottom: 1px solid;
+	}
+	#doc_spend-excel .doc-total_price table {border: 1px solid;}
+	#doc_spend-excel .doc-unit_price table thead tr:first-child th {border-bottom: 1px !important;}
+	#doc_spend-excel .doc-unit_price table thead tr:last-child th {border-bottom: 2px solid;}
+	#doc_spend-excel .doc-unit_price table thead tr:last-child th:nth-child(1) {width:10%;}
+	#doc_spend-excel .doc-unit_price table thead tr:last-child th:nth-child(2) {width:10%;}
+	#doc_spend-excel .doc-unit_price table thead tr:last-child th:nth-child(3) {width:10%;}
+	#doc_spend-excel .doc-unit_price table thead tr:last-child th:nth-child(4) {width:44%;}
+	#doc_spend-excel .doc-unit_price table thead tr:last-child th:nth-child(5) {width:5%;}
+	#doc_spend-excel .doc-unit_price table thead tr:last-child th:nth-child(6) {width:10%;}
+	#doc_spend-excel .doc-unit_price table thead tr:last-child th:nth-child(7) {width:10%;}
+	
+	#doc_traffic-excel table th, #doc_traffic-excel table td{
+		border-left: 1px solid;
+		border-top: 1px solid;
+	}
+	#doc_traffic-excel .doc-readme p {padding-left:10px}
+	#doc_traffic-excel .doc-unit_price table {font-size:8px;}
+	#doc_traffic-excel .doc-unit_price table tbody tr:last-child td, #doc_traffic-excel .doc-unit_price table thead tr:last-child th{border-bottom: 1px solid;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(1) {width:6%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(2) {width:7%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(3) {width:4%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(4) {width:6%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(5) {width:7%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(6) {width:4%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(7) {width:5%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(8) {width:5%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(9) {width:5%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(10) {width:5%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(11) {width:5%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(12) {width:5%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(13) {width:5%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(14) {width:5%;}
+	#doc_traffic-excel .doc-unit_price table thead tr:last-child th:nth-child(15) {width:6%;}
+	
+	#doc_traffic-excel .doc-unit_price table tbody tr:last-child td {font-weight:bold; border-top:2px solid;}
+}
