@@ -3,7 +3,7 @@
 <%@page import="com.dhitech.framework.tray.Tray"%>
 <%@page import="com.dhitech.framework.tray.RequestTrayFactory"%>
 <%@page import="com.dhitech.framework.tray.DhitechRequestTrayFactory"%>
-<%@page import="com.eng.login.cmd.loginCmd"%>
+<%@page import="com.eng.login.cmd.LoginCmd"%>
 <%@page import="java.util.Calendar"%>
 <%
 	// 이전페이지에서 POST/GET방식으로 전달한 모든 파라미터를 TRAY에 담는다. --> 기본사용
@@ -11,7 +11,7 @@
 	RequestTrayFactory requestFactory  = new DhitechRequestTrayFactory();
 	Tray reqTray = requestFactory.getTray(request);
 	
-	loginCmd command = new loginCmd(reqTray, request, response);
+	LoginCmd command = new LoginCmd(reqTray, request, response);
 	Tray rsTray = (Tray)request.getAttribute("result");
 		
 	if (("Y").equals(reqTray.getString("chk_cookie"))){
@@ -32,12 +32,15 @@
 	}
 	
 	if( rsTray.getRowCount() > 0 ){
-		reqTray.setString("dept_cd", rsTray.getString("dept_cd"));
-		reqTray.setString("department", rsTray.getString("department"));
+		reqTray.setString("roll", rsTray.getString("roll"));
 		reqTray.setString("user_name", rsTray.getString("user_name"));
 		
 		session.setAttribute("user_info", rsTray);
-		response.sendRedirect("/adminBoard/");
+		if(rsTray.getString("roll").equals("a")){
+			response.sendRedirect("/adminBoard/");
+		}else if(rsTray.getString("roll").equals("b")){
+			response.sendRedirect("/managerBoard/");
+		}
 	}else{
 		//사용자 정보 없음
 %>

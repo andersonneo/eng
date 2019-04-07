@@ -12,7 +12,7 @@
 <%@ page import="java.util.Date"%>
 <%@ page import="java.util.Calendar"%>
 <%
-//이전페이지에서 POST/GET방식으로 전달한 모든 파라미터를 TRAY에 담는다. --> 기본사용
+	//이전페이지에서 POST/GET방식으로 전달한 모든 파라미터를 TRAY에 담는다. --> 기본사용
 	request.setCharacterEncoding("utf-8");
 	RequestTrayFactory requestFactory  = new DhitechRequestTrayFactory();
 	Tray reqTray = requestFactory.getTray(request);
@@ -23,7 +23,7 @@
 	
 	//선택한 인원 정보 세션 추가
 	reqTray.setString("user_id", selectedUserId);
-	new loginCmd().loginWithoutPwCmd(reqTray, request, response);
+	new LoginCmd().loginWithoutPwCmd(reqTray, request, response);
 	Tray rsUserTray = (Tray)request.getAttribute("result");
 	System.out.println("rsUserTray : "+rsUserTray);
 	session.setAttribute("s_user_info", rsUserTray);
@@ -77,32 +77,32 @@
 	
 	if(rsGTray.getRowCount() != 0){
 		for(int i = 0; i < rsGTray.getRowCount(); i ++){
-			if (i == 0){
-				startUsingDate = rsGTray.getString("usedate",i).substring(0,10);
-				endUsingDate = rsGTray.getString("usedate",i).substring(0,10);
-			}else{
-				if (sdf.parse(startUsingDate).compareTo(sdf.parse(rsGTray.getString("usedate",i).substring(0,10))) > 0){
-					startUsingDate = rsGTray.getString("usedate",i).substring(0,10);
-				}
-				if (sdf.parse(endUsingDate).compareTo(sdf.parse(rsGTray.getString("usedate",i).substring(0,10))) <= 0){
-					endUsingDate = rsGTray.getString("usedate",i).substring(0,10);
-				}
-			}
+	if (i == 0){
+		startUsingDate = rsGTray.getString("usedate",i).substring(0,10);
+		endUsingDate = rsGTray.getString("usedate",i).substring(0,10);
+	}else{
+		if (sdf.parse(startUsingDate).compareTo(sdf.parse(rsGTray.getString("usedate",i).substring(0,10))) > 0){
+			startUsingDate = rsGTray.getString("usedate",i).substring(0,10);
+		}
+		if (sdf.parse(endUsingDate).compareTo(sdf.parse(rsGTray.getString("usedate",i).substring(0,10))) <= 0){
+			endUsingDate = rsGTray.getString("usedate",i).substring(0,10);
+		}
+	}
 		}
 	}
 	if(rsTTray.getRowCount() != 0){
 		for(int i = 0; i < rsTTray.getRowCount(); i ++){
-			if (startUsingDate == "" && endUsingDate==""){
-				startUsingDate = rsTTray.getString("sdate",i).substring(0,10);
-				endUsingDate = rsTTray.getString("sdate",i).substring(0,10);
-			}else{
-				if (sdf.parse(startUsingDate).compareTo(sdf.parse(rsTTray.getString("sdate",i).substring(0,10))) > 0){
-					startUsingDate = rsTTray.getString("sdate",i).substring(0,10);
-				}
-				if (sdf.parse(endUsingDate).compareTo(sdf.parse(rsTTray.getString("sdate",i).substring(0,10))) <= 0){
-					endUsingDate = rsTTray.getString("sdate",i).substring(0,10);
-				}
-			}
+	if (startUsingDate == "" && endUsingDate==""){
+		startUsingDate = rsTTray.getString("sdate",i).substring(0,10);
+		endUsingDate = rsTTray.getString("sdate",i).substring(0,10);
+	}else{
+		if (sdf.parse(startUsingDate).compareTo(sdf.parse(rsTTray.getString("sdate",i).substring(0,10))) > 0){
+			startUsingDate = rsTTray.getString("sdate",i).substring(0,10);
+		}
+		if (sdf.parse(endUsingDate).compareTo(sdf.parse(rsTTray.getString("sdate",i).substring(0,10))) <= 0){
+			endUsingDate = rsTTray.getString("sdate",i).substring(0,10);
+		}
+	}
 		}
 	}
 	if (startUsingDate!="" && endUsingDate!=""){

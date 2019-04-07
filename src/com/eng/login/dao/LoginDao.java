@@ -7,7 +7,7 @@ import com.dhitech.framework.log.Log;
 import com.dhitech.framework.sql.QueryRunner;
 import com.dhitech.framework.tray.Tray;
 
-public class loginDao extends BaseDao {
+public class LoginDao extends BaseDao {
 
 	/**
 	 * 로그인 처리를 한다.
