@@ -6,7 +6,7 @@
 <%@ page import="com.dhitech.spend.infosearch.cmd.infosearchCmd"%>
 <%@ page import="com.dhitech.framework.util.FormatCalendar"%>
 <%@ page import="java.util.Calendar"%>
-<%
+<%    
 	//이전페이지에서 POST/GET방식으로 전달한 모든 파라미터를 TRAY에 담는다. --> 기본사용
 	request.setCharacterEncoding("utf-8");
 	RequestTrayFactory requestFactory  = new DhitechRequestTrayFactory();
