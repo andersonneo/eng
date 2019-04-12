@@ -2,11 +2,11 @@ package com.eng.login.gate;
 
 import java.sql.Connection;
 
-import com.dhitech.framework.business.BaseBean;
-import com.dhitech.framework.exception.AppException;
-import com.dhitech.framework.exception.ExceptionManager;
-import com.dhitech.framework.log.Log;
-import com.dhitech.framework.tray.Tray;
+import com.eng.framework.business.BaseBean;
+import com.eng.framework.exception.AppException;
+import com.eng.framework.exception.ExceptionManager;
+import com.eng.framework.log.Log;
+import com.eng.framework.tray.Tray;
 import com.eng.login.dao.LoginDao;
 
 public final class LoginGate extends BaseBean {

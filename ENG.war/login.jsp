@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=utf-8"%>
-<%@ page import="com.dhitech.framework.tray.Tray"%>
-<%@ page import="com.dhitech.framework.tray.RequestTrayFactory"%>
-<%@ page import="com.dhitech.framework.tray.DhitechRequestTrayFactory"%>
-<%@ page import="com.dhitech.framework.config.*"%>
+<%@ page import="com.eng.framework.tray.Tray"%>
+<%@ page import="com.eng.framework.tray.RequestTrayFactory"%>
+<%@ page import="com.eng.framework.tray.DhitechRequestTrayFactory"%>
+<%@ page import="com.eng.framework.config.*"%>
 <%
 	//이전페이지에서 POST/GET방식으로 전달한 모든 파라미터를 TRAY에 담는다. --> 기본사용
 	request.setCharacterEncoding("utf-8"); 
@@ -33,17 +33,17 @@
 			<div class="animate form login_form">
 				<section class="login_content">
 					<form name="frm_login" action="loginCTL.jsp" method="POST">
-						<h1>DHITech Login</h1>
+						<h1>We'll English Academy</h1>
 						<div>
-							<input type="text" id="user_id" name="user_id" class="form-control" placeholder="사용자 아이디" required="" value="<%=userid_cookie %>"/>
+							<input type="text" id="user_id" name="user_id" class="form-control" placeholder="ID" required="" value="<%=userid_cookie %>"/>
 						</div>
 						<div>
-							<input type="password" id="user_pw" name="user_pw" class="form-control" placeholder="비밀번호" required="" />
+							<input type="password" id="user_pw" name="user_pw" class="form-control" placeholder="PASSWORD" required="" />
 						</div>
 						<div>
 							<div class="checkbox" style="float:left;display:inline-block">
 								<label>
-									<input type="checkbox" id="chk_cookie" name="chk_cookie" <% if (("").equals(userid_cookie)){ out.print("value=\"N\"");}else{out.print("value=\"Y\" checked=\"checked\"");} %>  class="flat"> 아이디 저장
+									<input type="checkbox" id="chk_cookie" name="chk_cookie" <% if (("").equals(userid_cookie)){ out.print("value=\"N\"");}else{out.print("value=\"Y\" checked=\"checked\"");} %>  class="flat"> save
 								</label>
 							</div>
 							<a class="btn btn-default submit" href="#" style="float:right">Log in</a>
@@ -54,9 +54,9 @@
 							<br />
 							<div>
 								<h2>
-									<i class="fa fa-calculator"></i> Japan -Php EngSchool
+									<i class="fa fa-calculator"></i> well-english-academy.com
 								</h2>
-								<p>©2019 All Rights Reserved. EngSchool</p>
+								<p>©2019 All Rights Reserved. well-english-academy.com</p>
 							</div>
 						</div>
 					</form>

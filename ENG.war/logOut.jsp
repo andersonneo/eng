@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.dhitech.framework.tray.Tray"%>
-<%@ page import="com.dhitech.framework.tray.RequestTrayFactory"%>
-<%@ page import="com.dhitech.framework.tray.DhitechRequestTrayFactory"%>    
-<%@ page import="com.dhitech.framework.log.Log"%>
+<%@ page import="com.eng.framework.tray.Tray"%>
+<%@ page import="com.eng.framework.tray.RequestTrayFactory"%>
+<%@ page import="com.eng.framework.tray.DhitechRequestTrayFactory"%>    
+<%@ page import="com.eng.framework.log.Log"%>
 <%//@ include file="/include/aclCheck.jsp" %>
 <%
 	//Default

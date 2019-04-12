@@ -1,9 +1,11 @@
 package com.eng.login.cmd;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dhitech.framework.tray.Tray;
+import com.eng.framework.tray.Tray;
 import com.eng.login.gate.LoginGate;
 
 public class LoginCmd{

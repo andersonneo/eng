@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="UTF-8"%>
 <%@ include file="/include/aclCheck.jsp"%>
-<%@ page import="com.dhitech.framework.tray.Tray"%>
-<%@ page import="com.dhitech.framework.tray.RequestTrayFactory"%>
-<%@ page import="com.dhitech.framework.tray.DhitechRequestTrayFactory"%>
-<%@ page import="com.dhitech.spend.infosearch.cmd.infosearchCmd"%>
-<%@ page import="com.dhitech.spend.infosearchdetail.cmd.infosearchDetailCmd"%>
-<%@ page import="com.dhitech.spend.accountsubject.cmd.accountSubjectCmd"%>
+<%@ page import="com.eng.framework.tray.Tray"%>
+<%@ page import="com.eng.framework.tray.RequestTrayFactory"%>
+<%@ page import="com.eng.framework.tray.DhitechRequestTrayFactory"%>
+<%@ page import="com.eng.spend.infosearch.cmd.infosearchCmd"%>
+<%@ page import="com.eng.spend.infosearchdetail.cmd.infosearchDetailCmd"%>
+<%@ page import="com.eng.spend.accountsubject.cmd.accountSubjectCmd"%>
 <%@ page import="com.dhitech.spend.login.cmd.loginCmd" %>
-<%@ page import="com.dhitech.spend.getdept.cmd.GetDeptCmd"%>
+<%@ page import="com.eng.spend.getdept.cmd.GetDeptCmd"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.util.Calendar"%>

@@ -1,11 +1,12 @@
 package com.eng.login.dao;
 
 import java.sql.Connection;
-import com.dhitech.framework.dao.BaseDao;
-import com.dhitech.framework.exception.AppException;
-import com.dhitech.framework.log.Log;
-import com.dhitech.framework.sql.QueryRunner;
-import com.dhitech.framework.tray.Tray;
+
+import com.eng.framework.dao.BaseDao;
+import com.eng.framework.exception.AppException;
+import com.eng.framework.log.Log;
+import com.eng.framework.sql.QueryRunner;
+import com.eng.framework.tray.Tray;
 
 public class LoginDao extends BaseDao {
 
@@ -22,7 +23,7 @@ public class LoginDao extends BaseDao {
 
         	StringBuffer userQuery = new StringBuffer();
 
-        	userQuery.append("\n	select * from where user_id= :user_id AND  passwd = :user_pw ( ");
+        	userQuery.append("\n	select * from eng_user where userid= :user_id AND  passwd = :user_pw  ");
         	
         	QueryRunner runner = new QueryRunner(userQuery.toString());
         	runner.setParams(reqTray);

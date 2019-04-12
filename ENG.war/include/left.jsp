@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="UTF-8"%>
-<%@page import="com.dhitech.framework.tray.Tray"%>
-<%@page import="com.dhitech.framework.tray.RequestTrayFactory"%>
-<%@page import="com.dhitech.framework.tray.DhitechRequestTrayFactory"%>
+<%@page import="com.eng.framework.tray.Tray"%>
+<%@page import="com.eng.framework.tray.RequestTrayFactory"%>
+<%@page import="com.eng.framework.tray.DhitechRequestTrayFactory"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	Tray leftTray = (Tray)session.getAttribute("user_info");

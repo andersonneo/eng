@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="UTF-8"%>
 <%@ include file="/include/aclCheck.jsp"%>
-<%@ page import="com.dhitech.framework.tray.Tray"%>
-<%@ page import="com.dhitech.framework.tray.RequestTrayFactory"%>
-<%@ page import="com.dhitech.framework.tray.DhitechRequestTrayFactory"%>
-<%@ page import="com.dhitech.spend.infosearch.cmd.infosearchCmd"%>
-<%@ page import="com.dhitech.framework.util.FormatCalendar"%>
+<%@ page import="com.eng.framework.tray.Tray"%>
+<%@ page import="com.eng.framework.tray.RequestTrayFactory"%>
+<%@ page import="com.eng.framework.tray.DhitechRequestTrayFactory"%>
+<%@ page import="com.eng.spend.infosearch.cmd.infosearchCmd"%>
+<%@ page import="com.eng.framework.util.FormatCalendar"%>
 <%@ page import="java.util.Calendar"%>
 <%    
 	//이전페이지에서 POST/GET방식으로 전달한 모든 파라미터를 TRAY에 담는다. --> 기본사용
