@@ -16,17 +16,37 @@ public class AdminBoardCmd {
 	public AdminBoardCmd(){
 	}
 	
-	public void AdminBoardCmd(Tray reqTray, HttpServletRequest request, HttpServletResponse response) {
+	public AdminBoardCmd(Tray reqTray, HttpServletRequest request, HttpServletResponse response) {
         this.request = request;
         this.response = response;
         this.reqTray = reqTray;
         doExecute();
     }
 	 protected void doExecute() {
-		 AdminBoardGate gate = new AdminBoardGate();
-    	Collection collection = gate.findAll(reqTray);
-        request.setAttribute("count_result", collection);
+		AdminBoardGate gate = new AdminBoardGate();
+		Collection collection = gate.findAll(reqTray);
+		request.setAttribute("result", collection);
 	  }
 	    
-	    protected void doExecute(Tray reqTray, HttpServletRequest request, HttpServletResponse response){}
+    
+    
+    //등록
+    public void iCTLCmd(Tray reqTray, HttpServletRequest request, HttpServletResponse response) {
+      this.request = request;
+      this.response = response;
+      this.reqTray = reqTray;
+      doInsert();
+    }
+		private void doInsert() {
+			AdminBoardGate gate = new AdminBoardGate();
+			boolean success = gate.insert(reqTray);
+			System.out.println("success==="+success);
+      request.setAttribute("result", success + "");
 	}
+		
+		
+		
+	}
+
+
+

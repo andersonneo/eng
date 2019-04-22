@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+response.setHeader("Content-Disposition", "attachment; filename=EngData.xls"); 
+response.setHeader("Content-Description", "JSP Generated Data");
+%>
 <%@ page import="java.util.ArrayList"%>
 <%@page import="com.eng.framework.tray.Tray"%>
 <%@page import="com.eng.framework.tray.RequestTrayFactory"%>
@@ -34,7 +38,7 @@
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">  
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
@@ -48,83 +52,12 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    
-    
-    <script type="text/javascript">
-    	
-    	function excelDown(){
-    		window.open("./indexExcel.jsp", "fullexcel", "toolbar=no, resizable=no, width=1, height=1 left=1 top=1");
-    	}
-    
-    </script>
-    
-    
   </head>
 
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <span>English</span>
-            </div>
-
-            <div class="clearfix"></div> 
-
-            <!-- menu profile quick info
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            /menu profile quick info -->
-
-            <br />
-
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <h3>Hi!</h3>
-                <ul class="nav side-menu">
-                	
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="index.jsp">Tables</a></li>
-                      <li><a href="register.jsp">Regist</a></li>
-                    </ul>
-                  </li>
-                 
-                </ul>
-              </div>
-              
-            </div>
-           
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right"> 
-                <li><a href="../logOut.jsp"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-              </ul>
-
-                
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- /top navigation -->
+        
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -138,8 +71,6 @@
                     <h2>Data </h2>
                     
                     <div class="clearfix"></div>
-                  </div>
-                  <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="javascript:excelDown();"><i class="fa fa-file-excel-o"></i> Excel Down</a>
                   </div>
                   <div class="x_content">                   
                     <table id="datatable" class="table table-striped table-bordered">
@@ -188,14 +119,7 @@
         </div>
         <!-- /page content -->
 
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            ¨Ï2019 All Rights Reserved. well-english-academy.com
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
+       
       </div>
     </div>
 

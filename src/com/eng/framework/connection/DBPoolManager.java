@@ -80,7 +80,7 @@ public class DBPoolManager {
      * @see db.properties의 설정참조
      */
     public Connection getConnection(String connName) throws SQLException {
-    	Log.debug("ConnectionPoolManager----------> "+connName);
+    	Log.debug("ConnectionPoolManager-2---------> "+connName);
         Connection conn = null;
         try {
             conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:" + connName);

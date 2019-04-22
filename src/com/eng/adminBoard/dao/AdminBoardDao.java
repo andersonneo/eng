@@ -21,26 +21,31 @@ public class AdminBoardDao {
         	int count = 0;
         	Tray rsTray = null;
 
-        	StringBuffer SELECT_COUNT_SERVER_SQL = new StringBuffer();
+        	StringBuffer SELECT_COUNT_BOARD_SQL = new StringBuffer();
 
-        	SELECT_COUNT_SERVER_SQL.append("\n		select COUNT(a.CHECK_DATE_FORM) as cnt                                                                                                        ");        	
-        	SELECT_COUNT_SERVER_SQL.append("\n		            from                                                                                                                              ");
+        	//
+        	SELECT_COUNT_BOARD_SQL.append("\n		select count(*) as cnt from eng_admin_board                                                                                                        ");        	
 
-            Log.debug("", this, "SELECT_COUNT_SERVER_SQL : \n" + SELECT_COUNT_SERVER_SQL.toString());
-            QueryRunner runner = new QueryRunner(SELECT_COUNT_SERVER_SQL.toString());
+            Log.debug("", this, "SELECT_COUNT_SERVER_SQL : \n" + SELECT_COUNT_BOARD_SQL.toString());
+            QueryRunner runner = new QueryRunner(SELECT_COUNT_BOARD_SQL.toString());
             rsTray = (Tray)runner.query(conn);
 
+        	Log.debug("SELECT_COUNT_BOARD_SQL : " + runner.toString());
         	arrayList.add(rsTray);
         	
         	
-        	//OS 쿼리
-        	StringBuffer SELECT_CORP_SQL = new StringBuffer();
-        	SELECT_CORP_SQL.append("\n	SELECT *					");
-        	SELECT_CORP_SQL.append("\n	FROM pc_os				");
-        	SELECT_CORP_SQL.append("\n	ORDER BY os_key	");
-        	runner = new QueryRunner(SELECT_CORP_SQL.toString());
-        	Log.debug("SELECT_CORP_SQL : " + runner.toString());
-        	arrayList.add((Tray)runner.query(conn));    
+        	//
+        	StringBuffer SELECT_BOARD_SQL = new StringBuffer();
+        	SELECT_BOARD_SQL.append("\n	SELECT name,gender,email					");
+        	SELECT_BOARD_SQL.append("\n	from eng_admin_board				");
+        	Log.debug("SELECT_BOARD_SQL : " + runner.toString());
+            runner = new QueryRunner(SELECT_BOARD_SQL.toString());
+            
+            
+            rsTray = (Tray)runner.query(conn);
+            
+            
+        	arrayList.add(rsTray);    
 
         	return arrayList;
         }catch (Exception e){
@@ -49,5 +54,36 @@ public class AdminBoardDao {
             throw new AppException("FullReportDao.findAll() Exception ", e);
         }
     } 
+	
+	//등록
+	public boolean insert(Connection conn, Tray reqTray) throws AppException{
+		boolean result = true;
+        try{
+        	int cnt = 0;
+        	Tray rsTray = null; 
+        	
+        	StringBuffer INSERT_SQL = new StringBuffer();
+        	        	
+        	INSERT_SQL.append("\n	INSERT INTO eng_admin_board (name, gender, email)");
+        	INSERT_SQL.append("\n	VALUES (:name , :gender, :email )");
+ 	
+        	QueryRunner runner = new QueryRunner(INSERT_SQL.toString());        	 
+        	Log.debug("", this, "INSERT_SQL : \n" + runner.toString());  
+        	runner.setParams(reqTray);
+        	cnt = runner.update(conn);
+        	if(cnt != 1){                
+                result = false;
+        	}
+        	return result;
+        }catch (Exception ex){
+            try{
+                conn.rollback();
+            }catch (Exception e){}
+            String methodName = "."+new Object(){}.getClass().getEnclosingMethod().getName()+"()";
+            Log.error("ERROR", this, "at "+this.getClass().getName()+methodName+ex);
+            ex.printStackTrace();
+            throw new AppException(this.getClass().getSimpleName()+methodName+" Exception ", ex);
+        }
+    }
 
 }

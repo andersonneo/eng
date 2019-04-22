@@ -516,10 +516,16 @@ public abstract class BaseBean implements Business {
 
 
     protected void returnConnection(Connection conn) throws AppException {
-    	
-    	
-    	System.out.println("nconn======"+conn);
-    	
+    	 if(conn != null) {
+             try {
+                 if(!conn.isClosed()){
+                     Log.info("", this, "at BaseBeen close connection!");
+                     conn.close();
+                 }
+             } catch (SQLException e) {
+                 throw new AppException("BaseBean.returnConnection(Connection conn)에서 Connection.close() 예외 발생", e);
+             }
+         }
     }
 
     /**

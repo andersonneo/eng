@@ -1,0 +1,11 @@
+$(document).ready(function(){
+	
+	
+		$(document).on("click","#adminRegisterSubmit",function(){		
+		document.frm.action = "./registCTL.jsp";
+		document.frm.targer = "HiddenFrame";
+		document.frm.submit();
+	});
+	
+	
+});

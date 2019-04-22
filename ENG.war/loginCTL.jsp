@@ -38,7 +38,7 @@ System.out.println("rstray====1");
 	
 	if( rsTray.getRowCount() > 0 ){
 		reqTray.setString("roll", rsTray.getString("roll"));
-		reqTray.setString("user_name", rsTray.getString("user_name"));
+		reqTray.setString("username", rsTray.getString("username"));
 		
 		session.setAttribute("user_info", rsTray);
 		if(rsTray.getString("roll").equals("a")){
@@ -50,7 +50,7 @@ System.out.println("rstray====1");
 		//사용자 정보 없음
 %>
 		<script type="text/javascript">
-			alert("사용자가 없거나 패스워드가 틀렸습니다. 확인 후 다시 로그인 하십시오");
+			alert("no user");
 			location.href = "/";
 		</script>
 <%
