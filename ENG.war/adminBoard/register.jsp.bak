@@ -71,7 +71,9 @@
 
             <br />
 
-            <!-- sidebar menu -->
+
+
+						<!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>Hi!</h3>
@@ -86,16 +88,16 @@
                  
                 </ul>
               </div>
-              
             </div>
+           <!-- sidebar menu -->
            
           </div>
         </div>
 
-         <!-- top navigation -->
+				<!-- top navigation -->
         <%@include file="/include/topengnav.jsp"%>
         <!-- /top navigation -->
-
+       
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -197,9 +199,7 @@
         </div>
         <!-- /page content -->
 
-        <!-- footer content -->
-				<%@include file="/include/footeng.jsp"%>
-        <!-- /footer content -->
+       
       </div>
     </div>
 

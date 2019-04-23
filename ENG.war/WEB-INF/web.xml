@@ -3,7 +3,7 @@
 <web-app>                              
     <filter>            
         <filter-name>XSSDetectFilter</filter-name> 
-        <filter-class>com.dhitech.framework.filter.XSSDetectFilter</filter-class>
+        <filter-class>com.eng.framework.filter.XSSDetectFilter</filter-class>
         <init-param> 
             <param-name>ExceptURL</param-name> 
             <param-value></param-value>
