@@ -6,7 +6,6 @@
 <%@page import="com.eng.login.cmd.LoginCmd"%>
 <%@page import="java.util.Calendar"%>
 <%
-System.out.println("rstray====1");
 	// 이전페이지에서 POST/GET방식으로 전달한 모든 파라미터를 TRAY에 담는다. --> 기본사용
 	request.setCharacterEncoding("utf-8");
 	RequestTrayFactory requestFactory  = new DhitechRequestTrayFactory();
@@ -14,10 +13,6 @@ System.out.println("rstray====1");
 	
 	LoginCmd command = new LoginCmd(reqTray, request, response);
 	Tray rsTray = (Tray)request.getAttribute("result");
-	
-	
-	System.out.println("rstray===="+rsTray.getRowCount());
-	
 		
 	if (("Y").equals(reqTray.getString("chk_cookie"))){
 		Cookie cookie = new Cookie("ck_uid", reqTray.getString("user_id"));
@@ -41,6 +36,7 @@ System.out.println("rstray====1");
 		reqTray.setString("username", rsTray.getString("username"));
 		
 		session.setAttribute("user_info", rsTray);
+		session.setAttribute("username", rsTray.getString("username"));
 		if(rsTray.getString("roll").equals("a")){
 			response.sendRedirect("/adminBoard/");
 		}else if(rsTray.getString("roll").equals("b")){

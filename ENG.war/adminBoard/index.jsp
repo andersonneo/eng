@@ -102,7 +102,7 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>Hi!</h3>
+                <h3>Hi!<%=session.getAttribute("username")%></h3>
                 <ul class="nav side-menu">
                 	
                   <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
