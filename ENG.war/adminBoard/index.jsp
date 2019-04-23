@@ -56,12 +56,25 @@
     		window.open("./indexExcel.jsp", "fullexcel", "toolbar=no, resizable=no, width=1, height=1 left=1 top=1");
     	}
     
+    
+    function goDetail(idx){
+		var frm = document.frm;
+		var popOption = "scrollbars=auto,toolbar=no,resizable=no,width=650,height=600,left=0,top=0";
+		var pop = window.open('', 'goDetail', popOption); 			
+		frm.action="./registerPop.jsp?idx="+idx;
+		frm.target="goDetail";
+		frm.submit();
+	}
+	
+	
     </script>
     
     
   </head>
 
   <body class="nav-md">
+  	
+	<form name="frm" method="post" action="">
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -108,22 +121,7 @@
         </div>
 
         <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right"> 
-                <li><a href="../logOut.jsp"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-              </ul>
-
-                
-              </ul>
-            </nav>
-          </div>
-        </div>
+        <%@include file="/include/topengnav.jsp"%>
         <!-- /top navigation -->
 
         <!-- page content -->
@@ -148,6 +146,12 @@
                           <th>Name</th>
                           <th>Gender</th>
                           <th>Email</th>
+                          <th>etc1</th>
+                          <th>etc2</th>
+                          <th>etc3</th>
+                          <th>etc4</th>
+                          <th>etc5</th>
+                          <th>etc6</th>
                         </tr>
                       </thead>
 
@@ -160,10 +164,16 @@
 															String s1 = rsTray.getString("check_date_form", i);
 												%>
                       	
-                        <tr>
+                        <tr style="cursor:pointer" onclick="javascript:goDetail('<%=rsTray.getString("idx", i)%>')">
                           <td><%=rsTray.getString("name", i)%></td>
                           <td><%=rsTray.getString("gender", i)%></td>
                           <td><%=rsTray.getString("email", i)%></td>
+                          <td><%=rsTray.getString("etc1", i)%></td>
+                          <td><%=rsTray.getString("etc2", i)%></td>
+                          <td><%=rsTray.getString("etc3", i)%></td>
+                          <td><%=rsTray.getString("etc4", i)%></td>
+                          <td><%=rsTray.getString("etc5", i)%></td>
+                          <td><%=rsTray.getString("etc6", i)%></td>
                         </tr>
                         
                         
@@ -188,13 +198,8 @@
         </div>
         <!-- /page content -->
 
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            ¨Ï2019 All Rights Reserved. well-english-academy.com
-          </div>
-          <div class="clearfix"></div>
-        </footer>
+         <!-- footer content -->
+				<%@include file="/include/footeng.jsp"%>
         <!-- /footer content -->
       </div>
     </div>
@@ -228,6 +233,6 @@
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
-
+	</form>
   </body>
 </html>

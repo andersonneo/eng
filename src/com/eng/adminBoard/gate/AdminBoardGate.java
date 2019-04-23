@@ -46,4 +46,22 @@ public class AdminBoardGate extends BaseBean {
 		}
 	}
 	
+	public boolean update(Connection conn, Tray reqTray) throws AppException {
+		try {
+			return dao.update(conn, reqTray);
+		} catch (Exception ex) {
+			Log.error("ERROR", this, ex);
+			throw ExceptionManager.handleException(this.getClass().getName(), ex);
+		}
+	}
+	
+	public boolean delete(Connection conn, Tray reqTray) throws AppException {
+		try {
+			return dao.delete(conn, reqTray);
+		} catch (Exception ex) {
+			Log.error("ERROR", this, ex);
+			throw ExceptionManager.handleException(this.getClass().getName(), ex);
+		}
+	}
+	
 }

@@ -37,7 +37,7 @@
     <script type="text/javascript">
     	
     	function save(){
-    		document.frm.action = "./registCTL.jsp";
+    		document.frm.action = "./registCTL.jsp?gubun=insert";
 		    document.frm.targer = "HiddenFrame";
 		    document.frm.submit();
     	}
@@ -71,46 +71,12 @@
 
             <br />
 
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <h3>Hi!</h3>
-                <ul class="nav side-menu">
-                	
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="index.jsp">Tables</a></li>
-                      <li><a href="register.jsp">Regist</a></li>
-                    </ul>
-                  </li>
-                 
-                </ul>
-              </div>
-              
-            </div>
+           
            
           </div>
         </div>
 
-         <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right"> 
-                <li><a href="../logOut.jsp"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-              </ul>
-
-                
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- /top navigation -->
-
+       
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -148,6 +114,47 @@
                         </div>
                       </div>
                     
+                    	 <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc1</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc1" id="etc1" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                      
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc2</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc2" id="etc2" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                      
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc3</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc3" id="etc3" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                      
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc4</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc4" id="etc4" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                      
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc5</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc5" id="etc5" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                      
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc6</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
                      
                      
 
@@ -171,14 +178,7 @@
         </div>
         <!-- /page content -->
 
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            ¨Ï2019 All Rights Reserved. well-english-academy.com
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
+       
       </div>
     </div>
 

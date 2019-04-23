@@ -35,13 +35,37 @@ public class AdminBoardCmd {
       this.request = request;
       this.response = response;
       this.reqTray = reqTray;
-      doInsert();
+      
+      
+      if(reqTray.getString("gubun").equals("insert")) {
+    	  doInsert();
+      }else if(reqTray.getString("gubun").equals("update")) {
+    	  doUpdate();
+      }else if(reqTray.getString("gubun").equals("delete")) {
+    	  doDelete();
+      }
     }
-		private void doInsert() {
-			AdminBoardGate gate = new AdminBoardGate();
-			boolean success = gate.insert(reqTray);
-			System.out.println("success==="+success);
-      request.setAttribute("result", success + "");
+    
+    
+    
+    
+    
+	private void doInsert() {
+		AdminBoardGate gate = new AdminBoardGate();
+		boolean success = gate.insert(reqTray);
+		request.setAttribute("result", success + "");
+	}
+	
+	private void doUpdate() {
+		AdminBoardGate gate = new AdminBoardGate();
+		boolean success = gate.update(reqTray);
+		request.setAttribute("result", success + "");
+	}
+	
+	private void doDelete() {
+		AdminBoardGate gate = new AdminBoardGate();
+		boolean success = gate.delete(reqTray);
+		request.setAttribute("result", success + "");
 	}
 		
 		
