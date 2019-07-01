@@ -143,15 +143,13 @@
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Name</th>
+                          <th>Last name</th>
+                          <th>First name</th>
+                          <th>Date of birth</th>
                           <th>Gender</th>
-                          <th>Email</th>
-                          <th>etc1</th>
-                          <th>etc2</th>
-                          <th>etc3</th>
-                          <th>etc4</th>
-                          <th>etc5</th>
-                          <th>etc6</th>
+                          <th>Age</th>
+                          <th>Nationality</th>
+                          <th>Contact No.in your country</th>                          
                         </tr>
                       </thead>
 
@@ -172,8 +170,6 @@
                           <td><%=rsTray.getString("etc2", i)%></td>
                           <td><%=rsTray.getString("etc3", i)%></td>
                           <td><%=rsTray.getString("etc4", i)%></td>
-                          <td><%=rsTray.getString("etc5", i)%></td>
-                          <td><%=rsTray.getString("etc6", i)%></td>
                         </tr>
                         
                         

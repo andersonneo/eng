@@ -110,7 +110,7 @@
                     <form class="form-horizontal form-label-left" name="frm" method="post" action="">
                     	
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Last name</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" name="name" class="form-control">
                         </div>
@@ -119,13 +119,15 @@
                      
                      
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">email</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">First name</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" name="email" id="email" class="form-control col-md-10"/>
                         </div>
                       </div>
+                      
+                      
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Select</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="form-control" name="gender">
                             <option>select</option>
@@ -136,46 +138,137 @@
                       </div>
                     
                     	 <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc1</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of birth</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" name="etc1" id="etc1" class="form-control col-md-10"/>
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc2</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Age</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" name="etc2" id="etc2" class="form-control col-md-10"/>
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc3</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Height</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" name="etc3" id="etc3" class="form-control col-md-10"/>
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc4</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Weight</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" name="etc4" id="etc4" class="form-control col-md-10"/>
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc5</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Civil status</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" name="etc5" id="etc5" class="form-control col-md-10"/>
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc6</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Country of birth</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
                         </div>
                       </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nationality</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Occupation</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address abroad(No,street,)</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address　abroad(city,prefecture)</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address abroad(country,ZIP code)</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact No. in your country</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Emergency contact No.</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Relationship with the contact </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">E-mail address</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Passport No.</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of passport expiration</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Place of issue</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of arrival</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Flight No. to The Philippines</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of 1st VISA expiration</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10"/>
+                        </div>
+                      </div>
+                      
                      
                      
 
