@@ -105,10 +105,10 @@
                 <h3>Hi!<%=session.getAttribute("username")%></h3>
                 <ul class="nav side-menu">
                 	
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-table"></i> User Management <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.jsp">Tables</a></li>
-                      <li><a href="register.jsp">Regist</a></li>
+                      <li><a href="index.jsp">User Info</a></li>
+                      <li><a href="register.jsp">User Regist</a></li>
                     </ul>
                   </li>
                  
@@ -163,13 +163,13 @@
 												%>
                       	
                         <tr style="cursor:pointer" onclick="javascript:goDetail('<%=rsTray.getString("idx", i)%>')">
-                          <td><%=rsTray.getString("name", i)%></td>
+                          <td><%=rsTray.getString("last_name", i)%></td>
+                          <td><%=rsTray.getString("first_name", i)%></td>
+                          <td><%=rsTray.getString("birth_day", i)%></td>
                           <td><%=rsTray.getString("gender", i)%></td>
-                          <td><%=rsTray.getString("email", i)%></td>
-                          <td><%=rsTray.getString("etc1", i)%></td>
-                          <td><%=rsTray.getString("etc2", i)%></td>
-                          <td><%=rsTray.getString("etc3", i)%></td>
-                          <td><%=rsTray.getString("etc4", i)%></td>
+                          <td><%=rsTray.getString("age", i)%></td>
+                          <td><%=rsTray.getString("nationality", i)%></td>
+                          <td><%=rsTray.getString("contact_no", i)%></td>
                         </tr>
                         
                         

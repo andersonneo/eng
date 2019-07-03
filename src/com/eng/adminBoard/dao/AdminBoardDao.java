@@ -36,15 +36,31 @@ public class AdminBoardDao {
         	
         	//
         	StringBuffer SELECT_BOARD_SQL = new StringBuffer();
-        	SELECT_BOARD_SQL.append("\n	SELECT idx,name,gender,email,etc1,etc2,etc3,etc4,etc5,etc6					");
+        	SELECT_BOARD_SQL.append("\n	SELECT *					");
         	SELECT_BOARD_SQL.append("\n	from eng_admin_board				");
         	Log.debug("SELECT_BOARD_SQL : " + runner.toString());
             runner = new QueryRunner(SELECT_BOARD_SQL.toString());
-            
-            
             rsTray = (Tray)runner.query(conn);
+            arrayList.add(rsTray);
             
+            StringBuffer SELECT_IDX_BOARD_SQL = new StringBuffer();
+            SELECT_IDX_BOARD_SQL.append("\n	SELECT *					");
+            SELECT_IDX_BOARD_SQL.append("\n	from eng_admin_board				");
             
+            System.out.println("=============="+reqTray.getString("idx"));
+            
+            if(reqTray.getString("idx") == null||reqTray.getString("idx").equals("")){
+            }else {
+            	SELECT_IDX_BOARD_SQL.append("\n	WHERE idx = "+Integer.parseInt(reqTray.getString("idx"))					);
+            }
+        	Log.debug("SELECT_IDX_BOARD_SQL : " + runner.toString());
+            runner = new QueryRunner(SELECT_IDX_BOARD_SQL.toString());
+            if(reqTray.getString("idx") == null||reqTray.getString("idx").equals("")){
+            }else {
+            	
+            	runner.setParams(reqTray);    
+            }
+            rsTray = (Tray)runner.query(conn);
         	arrayList.add(rsTray);    
 
         	return arrayList;
@@ -64,8 +80,60 @@ public class AdminBoardDao {
         	
         	StringBuffer INSERT_SQL = new StringBuffer();
         	        	
-        	INSERT_SQL.append("\n	INSERT INTO eng_admin_board (idx, name, gender, email,etc1,etc2,etc3,etc4,etc5,etc6)");
-        	INSERT_SQL.append("\n	VALUES (nextval('engseq'), :name , :gender, :email, :etc1 ,:etc2, :etc3, :etc4, :etc5, :etc6 )");
+        	INSERT_SQL.append("\n	INSERT INTO eng_admin_board (");
+        	INSERT_SQL.append("\n	idx,");
+        	INSERT_SQL.append("\n	first_name, ");
+        	INSERT_SQL.append("\n	last_name,");
+        	INSERT_SQL.append("\n	gender, ");
+        	INSERT_SQL.append("\n	email, ");
+        	INSERT_SQL.append("\n	birth_day, ");
+        	INSERT_SQL.append("\n	age, ");
+        	INSERT_SQL.append("\n	height, ");
+        	INSERT_SQL.append("\n	weight, ");
+        	INSERT_SQL.append("\n	civil_status, ");
+        	INSERT_SQL.append("\n	country_of_birth, ");
+        	INSERT_SQL.append("\n	nationality, ");
+        	INSERT_SQL.append("\n	occupation, ");
+        	INSERT_SQL.append("\n	address_abroad_no_street, ");
+        	INSERT_SQL.append("\n	address_abroad_city, ");
+        	INSERT_SQL.append("\n	address_abroad_country_zip, ");
+        	INSERT_SQL.append("\n	contact_no, ");
+        	INSERT_SQL.append("\n	emergency_contact_no, ");
+        	INSERT_SQL.append("\n	relationship_contact, ");
+        	INSERT_SQL.append("\n	passport_no, ");
+        	INSERT_SQL.append("\n	date_of_passport_expiration, ");
+        	INSERT_SQL.append("\n	place_of_issue, ");
+        	INSERT_SQL.append("\n	date_of_arrival, ");
+        	INSERT_SQL.append("\n	flight_no_to_php, ");
+        	INSERT_SQL.append("\n	date_of_visa ");
+        	INSERT_SQL.append("\n	)");
+        	INSERT_SQL.append("\n	VALUES (");
+        	INSERT_SQL.append("\n	nextval('engseq'),");
+        	INSERT_SQL.append("\n	:firstName, ");
+        	INSERT_SQL.append("\n	:lastName, ");
+        	INSERT_SQL.append("\n	:gender, ");
+        	INSERT_SQL.append("\n	:eMail, ");
+        	INSERT_SQL.append("\n	:birthDay, ");
+        	INSERT_SQL.append("\n	:age, ");
+        	INSERT_SQL.append("\n	:height, ");
+        	INSERT_SQL.append("\n	:weight, ");
+        	INSERT_SQL.append("\n	:civilStatus, ");
+        	INSERT_SQL.append("\n	:countryBirth, ");
+        	INSERT_SQL.append("\n	:nationality, ");
+        	INSERT_SQL.append("\n	:occupation, ");
+        	INSERT_SQL.append("\n	:street, ");
+        	INSERT_SQL.append("\n	:prefecture, ");
+        	INSERT_SQL.append("\n	:zipCode, ");
+        	INSERT_SQL.append("\n	:contactNoCountry, ");
+        	INSERT_SQL.append("\n	:emergencyContactNo, ");
+        	INSERT_SQL.append("\n	:relationshipContact, ");
+        	INSERT_SQL.append("\n	:passportNo, ");
+        	INSERT_SQL.append("\n	:datePassportExpiration, ");
+        	INSERT_SQL.append("\n	:placeOfIssue, ");
+        	INSERT_SQL.append("\n	:dateArrival, ");
+        	INSERT_SQL.append("\n	:flightNoPhilippines, ");
+        	INSERT_SQL.append("\n	:visaExpiration ");
+        	INSERT_SQL.append("\n	)");
  	
         	QueryRunner runner = new QueryRunner(INSERT_SQL.toString());        	 
         	Log.debug("", this, "INSERT_SQL : \n" + runner.toString());  
@@ -94,15 +162,30 @@ public class AdminBoardDao {
     	    	
     	    	StringBuffer UPDATE_ADMIN_BOARD_SQL = new StringBuffer();
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n	UPDATE eng_admin_board  SET					");
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n       name        = :name                                                                                  ");                                  
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n       ,gender      = :gender                                                                                ");    
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n       ,email        = :email                                                                                  ");                                  
-            	UPDATE_ADMIN_BOARD_SQL.append("\n       ,etc1         = :etc1                                                                                ");                                    
-            	UPDATE_ADMIN_BOARD_SQL.append("\n       ,etc2              = :etc2                                                                                         ");                                  
-            	UPDATE_ADMIN_BOARD_SQL.append("\n       ,etc3              = :etc3                                                                                         ");                                  
-            	UPDATE_ADMIN_BOARD_SQL.append("\n       ,etc4              = :etc4                                                                                         ");                                    
-            	UPDATE_ADMIN_BOARD_SQL.append("\n       ,etc5              = :etc5                                                                                         ");                                    
-            	UPDATE_ADMIN_BOARD_SQL.append("\n       ,etc6              = :etc6                                                                                         ");                                  
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      first_name       = :firstName,                                                                                  ");          
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      last_name               		= :lastName  ,                                                                                ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      gender               		= :gender ,                                                                                 ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      email               		= :eMail ,                                                                                 ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      birth_day               		= :birthDay    ,                                                                              ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      age               		= :age       ,                                                                           ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      height               		= :height   ,                                                                               ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      weight               		= :weight      ,                                                                            ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      civil_status               		= :civilStatus     ,                                                                             ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      country_of_birth               		= :countryBirth   ,                                                                               ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      nationality               		= :nationality      ,                                                                            ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      occupation               		= :occupation      ,                                                                            ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      address_abroad_no_street               		= :street     ,                                                                             ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      address_abroad_city               		= :prefecture    ,                                                                              ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      address_abroad_country_zip               		= :zipCode   ,                                                                               ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      contact_no               		= :contactNoCountry           ,                                                                       ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      emergency_contact_no               		= :emergencyContactNo     ,                                                                             ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      relationship_contact               		= :relationshipContact     ,                                                                             ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      passport_no               		= :passportNo                           ,                                                       ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_passport_expiration               		= :datePassportExpiration   ,                                                                               ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      place_of_issue               		= :placeOfIssue            ,                                                                      ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_arrival               		= :dateArrival              ,                                                                    ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      flight_no_to_php               		= :flightNoPhilippines         ,                                                                         ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_visa                		= :visaExpiration                                                                                   ");      
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n	WHERE idx = "+Integer.parseInt(reqTray.getString("idx"))					);
     	    	
     	    	

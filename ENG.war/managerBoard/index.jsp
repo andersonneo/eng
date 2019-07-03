@@ -107,8 +107,8 @@
                 	
                   <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.jsp">Tables</a></li>
-                      <li><a href="register.jsp">Regist</a></li>
+                      <li><a href="index.jsp">User Info</a></li>
+                      <li><a href="register.jsp">User Regist</a></li>
                     </ul>
                   </li>
                  

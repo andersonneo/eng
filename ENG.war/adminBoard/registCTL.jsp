@@ -30,12 +30,12 @@ String result = (String)request.getAttribute("result");
 
 <%if(!(result==null||result.equals(""))&&result.equals("true")){%>
 	<script type="text/javascript">
-		alert("정상");
+		alert("success");
 		location.href = "./register.jsp";
 	</script>
 <%}else{%>
 	<script type="text/javascript">
-		alert("문제가 발생했습니다.");
+		alert("fail");
 		location.href = "./register.jsp";
 	</script>
 <%}%>

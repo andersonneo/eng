@@ -15,7 +15,7 @@
 	ArrayList arrayList = (ArrayList)request.getAttribute("result");
 	
 	Tray countTray = (Tray)arrayList.get(0);
-	Tray rsTray = (Tray)arrayList.get(1);
+	Tray rsTray = (Tray)arrayList.get(2);
 
 %>
 
@@ -91,23 +91,23 @@
                   <div class="x_content">
                     <br />
                     <form class="form-horizontal form-label-left" name="frm" method="post" action="">
-                    	
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
+                    	                     
+                     
+                     
+                    
+                    	<div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Last name</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="name" class="form-control" value='<%=rsTray.getString("name")%>' />
-                        </div>
-                      </div>
-                     
-                     
-                     
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">email</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="email" id="email" class="form-control col-md-10" value='<%=rsTray.getString("email")%>' />
+                          <input type="lastName" name="lastName" class="form-control" value='<%=rsTray.getString("last_name")%>' /> 
                         </div>
                       </div>
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">First name</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="firstName" id="firstName" class="form-control col-md-10" value='<%=rsTray.getString("first_name")%>' /> 
+                        </div>
+                      </div>
+                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Select</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="form-control" name="gender">
@@ -119,44 +119,134 @@
                       </div>
                     
                     	 <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc1</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of birth</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="etc1" id="etc1" class="form-control col-md-10" value='<%=rsTray.getString("email")%>' />
+                          <input type="text" name="birthDay" id="birthDay" class="form-control col-md-10" value='<%=rsTray.getString("birth_day")%>' />
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc2</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Age</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="etc2" id="etc2" class="form-control col-md-10" value='<%=rsTray.getString("email")%>' />
+                          <input type="text" name="age" id="age" class="form-control col-md-10" value='<%=rsTray.getString("age")%>' />
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc3</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Height</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="etc3" id="etc3" class="form-control col-md-10" value='<%=rsTray.getString("email")%>' />
+                          <input type="text" name="height" id="height" class="form-control col-md-10" value='<%=rsTray.getString("height")%>' />
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc4</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Weight</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="etc4" id="etc4" class="form-control col-md-10" value='<%=rsTray.getString("email")%>' />
+                          <input type="text" name="weight" id="weight" class="form-control col-md-10" value='<%=rsTray.getString("weight")%>' />
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc5</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Civil status</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="etc5" id="etc5" class="form-control col-md-10" value='<%=rsTray.getString("email")%>' />
+                          <input type="text" name="civilStatus" id="civilStatus" class="form-control col-md-10" value='<%=rsTray.getString("civil_status")%>' />
                         </div>
                       </div>
                       
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">etc6</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Country of birth</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="etc6" id="etc6" class="form-control col-md-10" value='<%=rsTray.getString("email")%>' />
+                          <input type="text" name="countryBirth" id="countryBirth" class="form-control col-md-10" value='<%=rsTray.getString("country_of_birth")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nationality</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="nationality" id="nationality" class="form-control col-md-10" value='<%=rsTray.getString("nationality")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Occupation</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="occupation" id="occupation" class="form-control col-md-10" value='<%=rsTray.getString("occupation")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address abroad(No,street,)</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="street" id="street" class="form-control col-md-10" value='<%=rsTray.getString("address_abroad_no_street")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address abroad(city,prefecture)</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="prefecture" id="prefecture" class="form-control col-md-10" value='<%=rsTray.getString("address_abroad_city")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address abroad(country,ZIP code)</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="zipCode" id="zipCode" class="form-control col-md-10" value='<%=rsTray.getString("address_abroad_country_zip")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact No. in your country</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="contactNoCountry" id="contactNoCountry" class="form-control col-md-10" value='<%=rsTray.getString("contact_no")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Emergency contact No.</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="emergencyContactNo" id="emergencyContactNo" class="form-control col-md-10" value='<%=rsTray.getString("emergency_contact_no")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Relationship with the contact </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="relationshipContact" id="relationshipContact" class="form-control col-md-10" value='<%=rsTray.getString("relationship_contact")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">E-mail address</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="eMail" id="eMail" class="form-control col-md-10" value='<%=rsTray.getString("email")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Passport No.</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="passportNo" id="passportNo" class="form-control col-md-10" value='<%=rsTray.getString("passport_no")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of passport expiration</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="datePassportExpiration" id="datePassportExpiration" class="form-control col-md-10" value='<%=rsTray.getString("date_of_passport_expiration")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Place of issue</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="placeOfIssue" id="placeOfIssue" class="form-control col-md-10" value='<%=rsTray.getString("place_of_issue")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of arrival</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="dateArrival" id="dateArrival" class="form-control col-md-10" value='<%=rsTray.getString("date_of_arrival")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Flight No. to The Philippines</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="flightNoPhilippines" id="flightNoPhilippines" class="form-control col-md-10" value='<%=rsTray.getString("flight_no_to_php")%>' />
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of 1st VISA expiration</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" name="visaExpiration" id="visaExpiration" class="form-control col-md-10" value='<%=rsTray.getString("date_of_visa")%>' />
                         </div>
                       </div>
                      
