@@ -164,7 +164,7 @@
 															String s1 = rsTray.getString("check_date_form", i);
 												%>
                       	
-                        <tr style="cursor:pointer" onclick="javascript:goDetail('<%=rsTray.getString("idx", i)%>')">
+                        <tr>
                           <td><%=rsTray.getString("name", i)%></td>
                           <td><%=rsTray.getString("gender", i)%></td>
                           <td><%=rsTray.getString("email", i)%></td>

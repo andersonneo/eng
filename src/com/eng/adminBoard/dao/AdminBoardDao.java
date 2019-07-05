@@ -105,7 +105,8 @@ public class AdminBoardDao {
         	INSERT_SQL.append("\n	place_of_issue, ");
         	INSERT_SQL.append("\n	date_of_arrival, ");
         	INSERT_SQL.append("\n	flight_no_to_php, ");
-        	INSERT_SQL.append("\n	date_of_visa ");
+        	INSERT_SQL.append("\n	date_of_visa, ");
+        	INSERT_SQL.append("\n	profile_file ");
         	INSERT_SQL.append("\n	)");
         	INSERT_SQL.append("\n	VALUES (");
         	INSERT_SQL.append("\n	nextval('engseq'),");
@@ -132,7 +133,8 @@ public class AdminBoardDao {
         	INSERT_SQL.append("\n	:placeOfIssue, ");
         	INSERT_SQL.append("\n	:dateArrival, ");
         	INSERT_SQL.append("\n	:flightNoPhilippines, ");
-        	INSERT_SQL.append("\n	:visaExpiration ");
+        	INSERT_SQL.append("\n	:visaExpiration, ");
+        	INSERT_SQL.append("\n	:fileName ");
         	INSERT_SQL.append("\n	)");
  	
         	QueryRunner runner = new QueryRunner(INSERT_SQL.toString());        	 
@@ -159,7 +161,6 @@ public class AdminBoardDao {
         try{
         	int cnt = 0;        	
         	
-    	    	
     	    	StringBuffer UPDATE_ADMIN_BOARD_SQL = new StringBuffer();
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n	UPDATE eng_admin_board  SET					");
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n      first_name       = :firstName,                                                                                  ");          
@@ -185,7 +186,8 @@ public class AdminBoardDao {
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n      place_of_issue               		= :placeOfIssue            ,                                                                      ");      
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_arrival               		= :dateArrival              ,                                                                    ");      
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n      flight_no_to_php               		= :flightNoPhilippines         ,                                                                         ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_visa                		= :visaExpiration                                                                                   ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_visa                		= :visaExpiration          ,                                                                         ");        
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      profile_file                		= :fileName                                                                                   ");      
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n	WHERE idx = "+Integer.parseInt(reqTray.getString("idx"))					);
     	    	
     	    	
@@ -212,13 +214,19 @@ public class AdminBoardDao {
         try{
         	int cnt = 0;       	
         	
+        	System.out.println("===================="+Integer.parseInt(reqTray.getString("idx")));
+        	
         	StringBuffer DELETE_ADMIN_BOARD_SQL = new StringBuffer();
         	DELETE_ADMIN_BOARD_SQL.append("\n	DELETE FROM eng_admin_board			");                            
-        	DELETE_ADMIN_BOARD_SQL.append("\n	WHERE idx = "+Integer.parseInt(reqTray.getString("idx"))					);
+        	DELETE_ADMIN_BOARD_SQL.append("\n	WHERE idx ="+Integer.parseInt(reqTray.getString("idx"))				);
         	
         	QueryRunner runner = new QueryRunner(DELETE_ADMIN_BOARD_SQL.toString());
         	
         	runner.setParams(reqTray);
+        	
+        	System.out.println(runner.toString());
+        	
+        	
         	Log.debug("", this, "DELETE_ADMIN_BOARD_SQL	: " + runner.toString());
         	cnt = runner.update(conn);
         	if(cnt != 1){                

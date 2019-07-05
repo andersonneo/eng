@@ -1,18 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="com.eng.framework.tray.Tray"%>
-<%@page import="com.eng.framework.tray.RequestTrayFactory"%>
-<%@page import="com.eng.framework.tray.DhitechRequestTrayFactory"%>
+<%@ page import="com.eng.framework.tray.Tray"%>
+<%@ page import="com.eng.framework.tray.MultipartRequestTray"%>
+<%@ page import="com.eng.framework.tray.DhitechMultipartRequestTrayFactory"%>
 <%@page import="com.eng.adminBoard.cmd.AdminBoardCmd"%>
 
 <%
 
 request.setCharacterEncoding("utf-8"); 
-RequestTrayFactory requestFactory  = new DhitechRequestTrayFactory();
-Tray reqTray = requestFactory.getTray(request);
+//파일업로드용
+DhitechMultipartRequestTrayFactory dhrequestFactory  = new DhitechMultipartRequestTrayFactory(); 
+Tray reqTray = dhrequestFactory.getTray(request);
 	
-	
+
+
+
+
+reqTray.setString("gubun",request.getParameter("gubun"));
+reqTray.setString("idx",request.getParameter("idx"));
+
 new AdminBoardCmd().iCTLCmd(reqTray, request, response);
 String result = (String)request.getAttribute("result");	
+
+
+
+
 
 %>
 
