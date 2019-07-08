@@ -43,36 +43,31 @@ public class AdminBoardCmd {
       
       
       
-      
-      int i = -1;
-      String fileExt ="";//RENAME 후 파일 확장자를 위한 변수
-      String reFileName = "";
-      
-      String saveDir = com.eng.framework.util.SpmUtil.getProperty("file.upload.path"); //저장경로
-      Date nowDate = new Date();
-      String strDate = com.eng.framework.util.SpmUtil.dateCastStringType(nowDate, "yyyyMMddHHmmss");
-
-      //파일을 가져온다
-      String fileName = com.eng.framework.util.SpmUtil.getProperty("file.upload.path")+reqTray.getString("profileFile");
+      if(reqTray.getString("profileFile")!="") {
+	      int i = -1;
+	      String fileExt ="";//RENAME 후 파일 확장자를 위한 변수
+	      String reFileName = "";
+	      
+	      String saveDir = com.eng.framework.util.SpmUtil.getProperty("file.upload.path"); //저장경로
+	      Date nowDate = new Date();
+	      String strDate = com.eng.framework.util.SpmUtil.dateCastStringType(nowDate, "yyyyMMddHHmmss");
+	
+	      //파일을 가져온다
+	      String fileName = com.eng.framework.util.SpmUtil.getProperty("file.upload.path")+reqTray.getString("profileFile");
 	      //확장자 체크, 확장자 분리
 	      if(( i = reqTray.getString("profileFile").lastIndexOf(".")) > -1){
 	          fileExt = reqTray.getString("profileFile").substring(i);
 	      }
-	
-	      //reName 경로 + 서버명 + _ + 날짜 + . + .확장자
 	      reFileName = strDate+fileExt;
 	
 	      //파일복사
-//		  com.eng.framework.util.FileIO.copyFile(fileName, reFileName);
 	      File f = new File(fileName);
 	      f.renameTo(new File(com.eng.framework.util.SpmUtil.getProperty("file.upload.path")+reFileName));
 	
-	      //파일제거
-//		  com.eng.framework.util.FileIO.deleteFile(fileName);
-	
-	      
 	      reqTray.setString("fileName",reFileName);
-      
+      }else {
+    	  reqTray.setString("fileName","");
+      }
       
       
       if(reqTray.getString("gubun").equals("insert")) {

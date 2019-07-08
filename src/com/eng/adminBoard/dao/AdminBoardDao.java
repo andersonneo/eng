@@ -163,33 +163,37 @@ public class AdminBoardDao {
         	
     	    	StringBuffer UPDATE_ADMIN_BOARD_SQL = new StringBuffer();
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n	UPDATE eng_admin_board  SET					");
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      first_name       = :firstName,                                                                                  ");          
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      last_name               		= :lastName  ,                                                                                ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      gender               		= :gender ,                                                                                 ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      email               		= :eMail ,                                                                                 ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      birth_day               		= :birthDay    ,                                                                              ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      age               		= :age       ,                                                                           ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      height               		= :height   ,                                                                               ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      weight               		= :weight      ,                                                                            ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      civil_status               		= :civilStatus     ,                                                                             ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      country_of_birth               		= :countryBirth   ,                                                                               ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      nationality               		= :nationality      ,                                                                            ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      occupation               		= :occupation      ,                                                                            ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      address_abroad_no_street               		= :street     ,                                                                             ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      address_abroad_city               		= :prefecture    ,                                                                              ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      address_abroad_country_zip               		= :zipCode   ,                                                                               ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      contact_no               		= :contactNoCountry           ,                                                                       ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      emergency_contact_no               		= :emergencyContactNo     ,                                                                             ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      relationship_contact               		= :relationshipContact     ,                                                                             ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      passport_no               		= :passportNo                           ,                                                       ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_passport_expiration               		= :datePassportExpiration   ,                                                                               ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      place_of_issue               		= :placeOfIssue            ,                                                                      ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_arrival               		= :dateArrival              ,                                                                    ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      flight_no_to_php               		= :flightNoPhilippines         ,                                                                         ");      
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      date_of_visa                		= :visaExpiration          ,                                                                         ");        
-    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      profile_file                		= :fileName                                                                                   ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      first_name       = :firstName                                                                                  ");          
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,last_name               		= :lastName                                                                                 ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,gender               		= :gender                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,email               		= :eMail                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,birth_day               		= :birthDay                                                                                 ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,age               		= :age                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,height               		= :height                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,weight               		= :weight                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,civil_status               		= :civilStatus                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,country_of_birth               		= :countryBirth                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,nationality               		= :nationality                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,occupation               		= :occupation                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,address_abroad_no_street               		= :street                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,address_abroad_city               		= :prefecture                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,address_abroad_country_zip               		= :zipCode                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,contact_no               		= :contactNoCountry                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,emergency_contact_no               		= :emergencyContactNo                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,relationship_contact               		= :relationshipContact                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,passport_no               		= :passportNo                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,date_of_passport_expiration               		= :datePassportExpiration                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,place_of_issue               		= :placeOfIssue                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,date_of_arrival               		= :dateArrival                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,flight_no_to_php               		= :flightNoPhilippines                                                                                  ");      
+    	    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,date_of_visa                		= :visaExpiration                                                                                   ");    
+    	    	System.out.println("==================="+reqTray.getString("fileName"));
+				if(reqTray.getString("fileName")==null||reqTray.getString("fileName")=="") {
+						    		
+			    }else {
+			    	UPDATE_ADMIN_BOARD_SQL.append("\n      ,profile_file                		= :fileName                                                                                   ");
+			    }
     	    	UPDATE_ADMIN_BOARD_SQL.append("\n	WHERE idx = "+Integer.parseInt(reqTray.getString("idx"))					);
-    	    	
     	    	
     	    	QueryRunner runner = new QueryRunner(UPDATE_ADMIN_BOARD_SQL.toString());
     	    	runner.setParams(reqTray);

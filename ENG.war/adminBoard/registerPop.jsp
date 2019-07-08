@@ -96,7 +96,7 @@
                      	<div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Profile image</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <img src="/profileupload/<%=rsTray.getString("profile_file")%>"  width="100" /><input type="file" name="profileFile" id="profileFile" class="form-control col-md-10"/>
+                          <img src="/profileupload/<%=rsTray.getString("profile_file")%>"  width="100" /><input type="file" name="profileFile" id="profileFile"  class="form-control col-md-10"/>
                         </div>
                       </div>
                       
@@ -120,7 +120,7 @@
                           <select class="form-control" name="gender">
                             <option>select</option>
                             <option value="male"  <%if(rsTray.getString("gender").equals("male")){%> selected <%}%>> male</option>
-                            <option value="female"<%if(rsTray.getString("gender").equals("male")){%> selected <%}%>> female</option>
+                            <option value="female"<%if(rsTray.getString("gender").equals("female")){%> selected <%}%>> female</option>
                           </select>
                         </div>
                       </div>

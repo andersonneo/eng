@@ -16,7 +16,7 @@ Tray reqTray = dhrequestFactory.getTray(request);
 
 
 reqTray.setString("gubun",request.getParameter("gubun"));
-reqTray.setString("idx",request.getParameter("idx"));
+reqTray.setString("idx",request.getParameter("idx")); 
 
 new AdminBoardCmd().iCTLCmd(reqTray, request, response);
 String result = (String)request.getAttribute("result");	
@@ -42,12 +42,14 @@ String result = (String)request.getAttribute("result");
 <%if(!(result==null||result.equals(""))&&result.equals("true")){%>
 	<script type="text/javascript">
 		alert("success");
-		location.href = "./register.jsp";
+		opener.parent.location='index.jsp';
+		window.close();
 	</script>
 <%}else{%>
 	<script type="text/javascript">
 		alert("fail");
 		location.href = "./register.jsp";
+		window.close();
 	</script>
 <%}%>
 
